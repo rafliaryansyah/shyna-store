@@ -105,3 +105,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.product-item {
+    margin-right: 20px;
+}
+</style>
