@@ -13,12 +13,12 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="img/products/women-1.jpg" alt="" />
+                            <router-link to="/"><img src="img/products/women-1.jpg" alt="" /></router-link>
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="icon_bag_alt"></i></a>
+                                    <router-link to="/"><i class="icon_bag_alt"></i></router-link>
                                 </li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="quick-view"><router-link to="/">+ Quick View</router-link></li>
                             </ul>
                         </div>
                         <div class="pi-text">
