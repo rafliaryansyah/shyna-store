@@ -1,4 +1,4 @@
-# vyna-store
+# shyna-store
 
 *******************
 # Link Presentasi Google Slide
