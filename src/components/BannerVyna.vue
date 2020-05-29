@@ -9,8 +9,8 @@
                             <div class="pi-pic">
                                 <router-link v-bind:to="'/product/'+itemProduct.id"><img v-bind:src="itemProduct.galleries[0].photo" alt="" /></router-link>
                                 <ul>
-                                    <li class="w-icon active">
-                                        <router-link v-bind:to="'/product/'+itemProduct.id"><i class="icon_bag_alt"></i></router-link>
+                                    <li class="w-icon active" @click="saveKeranjang(itemProduct.id, itemProduct.price, itemProduct.galleries[0].photo)" >
+                                       <i class="icon_bag_alt"></i>
                                     </li>
                                     <li class="quick-view"><router-link v-bind:to="'/product/'+itemProduct.id">+ Quick View</router-link></li>
                                 </ul>
@@ -52,8 +52,24 @@ export default {
     },
     data() {
         return {
-            products: []
+            products: [],
+            keranjangUser: []
         };
+    },
+    methods: {
+        saveKeranjang(idProduct, nameProduct, priceProduct, imageProduct){
+
+          var productStored = {
+              "id": idProduct,
+              "name": nameProduct,
+              "price": priceProduct,
+              "photo": imageProduct
+          }
+
+          this.keranjangUser.push(productStored);
+          const parsed = JSON.stringify(this.keranjangUser);
+          localStorage.setItem('keranjangUser', parsed);
+      }
     },
     mounted() {
         axios
